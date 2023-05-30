@@ -12,26 +12,32 @@ class ButtonSet extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          const SizedBox(
+            width: 10,
+          ),
           TextButton(
             onPressed: () => {},
             child: const Text(
               "QQ音乐",
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
           ),
           TextButton(
             onPressed: () => {},
             child: const Text(
               "酷狗音乐",
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
           ),
           TextButton(
             onPressed: () => {},
             child: const Text(
               "咪咕音乐",
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
+          ),
+          const SizedBox(
+            width: 10,
           ),
         ],
       ),

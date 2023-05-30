@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:music_ranking_app/config.dart';
+import 'package:music_ranking_app/widgets/application_title.dart';
 import 'package:music_ranking_app/widgets/button_set.dart';
 import 'package:music_ranking_app/widgets/leaderboard_type_sidebar.dart';
 import 'package:music_ranking_app/widgets/music_ranking.dart';
@@ -36,51 +37,62 @@ class MyApp extends StatelessWidget {
         //   bodyLarge: TextStyle(color: Colors.black),
         // ),
       ),
-      home: const Layout(),
+      home: Layout(),
     );
   }
 }
 
 // 布局
 class Layout extends StatelessWidget {
-  const Layout({super.key});
+  final List<String> platforms = ['QQ音乐', '酷狗音乐', '咪咕音乐'];
+  final List<String> charts = ['飙升榜', '新歌榜', '热门榜'];
+  final List<String> songs = List.generate(20, (i) => '歌曲曲曲曲曲曲曲曲曲 $i');
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          double screenWidth = constraints.maxWidth;
-          double containerWidth = screenWidth * 0.8;
-          double padding = (screenWidth - containerWidth) / 2;
+    return MaterialApp(
+      home: Scaffold(
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            double screenWidth = constraints.maxWidth;
+            double screenHeight = constraints.maxHeight;
+            double containerWidth = screenWidth * 0.8;
+            double padding = (screenWidth - containerWidth) / 2;
 
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: padding),
-            child: SizedBox(
-              width: containerWidth,
+            return Container(
+              padding: EdgeInsets.symmetric(horizontal: padding),
               child: Column(
                 children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const ApplicationTitle(),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   const ButtonSet(),
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.grey[200],
-                          child: const LeaderboardTypeSidebar(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: const [
+                        Expanded(
+                          flex: 1,
+                          child: LeaderboardTypeSidebar(),
                         ),
-                      ),
-                      const Expanded(
-                        flex: 3,
-                        child: MusicRanking(),
-                      ),
-                    ],
-                  )
+                        Expanded(
+                          flex: 4,
+                          child: MusicRanking(),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
