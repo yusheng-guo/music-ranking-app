@@ -1,9 +1,22 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:music_ranking_app/config.dart';
 import 'package:music_ranking_app/widgets/button_set.dart';
 import 'package:music_ranking_app/widgets/leaderboard_type_sidebar.dart';
 import 'package:music_ranking_app/widgets/music_ranking.dart';
 
-void main() {
+Future<Config> loadConfig() async {
+  final configString = await rootBundle.loadString('assets/config.json');
+  final configJson = jsonDecode(configString);
+  return Config.fromJson(configJson);
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final config = await loadConfig();
+  print(config.musicServices);
   runApp(const MyApp());
 }
 
