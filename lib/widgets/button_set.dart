@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class ButtonSet extends StatelessWidget {
+class ButtonSet extends StatefulWidget {
   const ButtonSet({super.key});
 
   @override
+  State<ButtonSet> createState() => _ButtonSetState();
+}
+
+class _ButtonSetState extends State<ButtonSet> {
+  int _selectedButton = 0;
+
+  @override
   Widget build(BuildContext context) {
+    // return const Placeholder();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Row(
@@ -16,24 +22,42 @@ class ButtonSet extends StatelessWidget {
             width: 10,
           ),
           TextButton(
-            onPressed: () => {},
-            child: const Text(
+            onPressed: () => {
+              setState(() => _selectedButton = 0),
+            },
+            child: Text(
               "QQ音乐",
-              style: TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(
+                fontSize: 18.0,
+                // color: Colors.black,
+                color: _selectedButton == 0 ? Colors.purple : Colors.black,
+              ),
             ),
           ),
           TextButton(
-            onPressed: () => {},
-            child: const Text(
+            onPressed: () => {
+              setState(() => _selectedButton = 1),
+            },
+            child: Text(
               "酷狗音乐",
-              style: TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(
+                fontSize: 18.0,
+                // color: Colors.black,
+                color: _selectedButton == 1 ? Colors.purple : Colors.black,
+              ),
             ),
           ),
           TextButton(
-            onPressed: () => {},
-            child: const Text(
+            onPressed: () => {
+              setState(() => _selectedButton = 2),
+            },
+            child: Text(
               "咪咕音乐",
-              style: TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(
+                fontSize: 18.0,
+                // color: Colors.black,
+                color: _selectedButton == 2 ? Colors.purple : Colors.black,
+              ),
             ),
           ),
           const SizedBox(
