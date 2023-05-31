@@ -18,39 +18,11 @@ class _MusicRankingState extends State<MusicRanking> {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return TextButton(
-          onPressed: () => {},
-          child: Container(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Text(
-                    items[index].name,
-                    style: const TextStyle(color: Colors.black),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    items[index].singer,
-                    style: const TextStyle(color: Colors.black),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    items[index].duration,
-                    style: const TextStyle(color: Colors.black),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    items[index].link,
-                    style: const TextStyle(color: Colors.black),
-                  ),
-                ],
-              )),
+        return ListTile(
+          // leading: Image.network(items[index].cover),
+          title: Text(items[index].name),
+          subtitle: Text(items[index].singer),
+          trailing: Text(items[index].duration),
         );
       },
     );
