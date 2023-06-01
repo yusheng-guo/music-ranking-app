@@ -8,7 +8,7 @@ var song1 = Song(
   link: 'https://example.com/shape-of-you.mp3',
   cover: 'https://example.com/shape-of-you.jpg',
   tag: 'Pop',
-  platform: Platform.QQMusic,
+  platform: 2,
 );
 
 var song2 = Song(
@@ -19,7 +19,7 @@ var song2 = Song(
   link: 'https://example.com/despacito.mp3',
   cover: 'https://example.com/despacito.jpg',
   tag: 'Pop',
-  platform: Platform.KugouMusic,
+  platform: 2,
 );
 
 var song3 = Song(
@@ -30,7 +30,7 @@ var song3 = Song(
   link: 'https://example.com/uptown-funk.mp3',
   cover: 'https://example.com/uptown-funk.jpg',
   tag: 'Funk',
-  platform: Platform.MiguMusic,
+  platform: 2,
 );
 
 var song4 = Song(
@@ -41,7 +41,7 @@ var song4 = Song(
   link: 'https://example.com/shape-of-you.mp3',
   cover: 'https://example.com/shape-of-you.jpg',
   tag: 'Pop',
-  platform: Platform.QQMusic,
+  platform: 1,
 );
 
 var song5 = Song(
@@ -52,7 +52,7 @@ var song5 = Song(
   link: 'https://example.com/despacito.mp3',
   cover: 'https://example.com/despacito.jpg',
   tag: 'Pop',
-  platform: Platform.KugouMusic,
+  platform: 0,
 );
 
 var song6 = Song(
@@ -63,7 +63,7 @@ var song6 = Song(
   link: 'https://example.com/uptown-funk.mp3',
   cover: 'https://example.com/uptown-funk.jpg',
   tag: 'Funk',
-  platform: Platform.MiguMusic,
+  platform: 2,
 );
 var song7 = Song(
   id: 1,
@@ -73,7 +73,7 @@ var song7 = Song(
   link: 'https://example.com/shape-of-you.mp3',
   cover: 'https://example.com/shape-of-you.jpg',
   tag: 'Pop',
-  platform: Platform.QQMusic,
+  platform: 1,
 );
 
 var song8 = Song(
@@ -84,7 +84,8 @@ var song8 = Song(
   link: 'https://example.com/despacito.mp3',
   cover: 'https://example.com/despacito.jpg',
   tag: 'Pop',
-  platform: Platform.KugouMusic,
+  // platform: Platform.KugouMusic,
+  platform: 0,
 );
 
 var song9 = Song(
@@ -95,7 +96,8 @@ var song9 = Song(
   link: 'https://example.com/uptown-funk.mp3',
   cover: 'https://example.com/uptown-funk.jpg',
   tag: 'Funk',
-  platform: Platform.MiguMusic,
+  // platform: Platform.MiguMusic,
+  platform: 1,
 );
 
 List<Song> songs = [

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:music_ranking_app/data/songs.dart';
+import 'package:music_ranking_app/models/song.dart';
+import 'package:music_ranking_app/service/get_songs.dart';
 
 class ButtonSet extends StatefulWidget {
   const ButtonSet({super.key});
@@ -22,8 +25,9 @@ class _ButtonSetState extends State<ButtonSet> {
             width: 10,
           ),
           TextButton(
-            onPressed: () => {
+            onPressed: () async => {
               setState(() => _selectedButton = 0),
+              songs = await fetchSongs('http://127.0.0.1:8080/qq/hotsong'),
             },
             child: Text(
               "QQ音乐",
